@@ -1,0 +1,17 @@
+body{
+    font-size: 2rem;
+}
+
+button{
+    background-color: rgb(153, 191, 225);
+    font-size: 2.3rem;
+    border-radius: 10px;
+}
+
+.plink a:visited{
+    color: rgb(49, 64, 78);
+}
+
+a{
+    text-decoration: underline;
+}
