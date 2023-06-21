@@ -1,0 +1,5 @@
+A variable to represent a text holder = textHolder;
+A variable to hold the text itself = entry;
+The entry itself = password;
+A button to to help display the output of the code = button;
+
