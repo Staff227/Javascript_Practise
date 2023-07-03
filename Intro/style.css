@@ -1,0 +1,16 @@
+p {
+    font-size: 3rem;
+}
+
+button{
+    font-size: 2rem;
+    
+}
+.yellow-button{
+    background-color: yellow;
+}
+
+.red-button{
+    background-color: red;
+    margin-left: 10px;
+}
