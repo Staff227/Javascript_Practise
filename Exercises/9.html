@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="button">9b</button>
+    <br />
+    <br />
+    <button
+      onclick="
+        choose('Heads');
+    "
+    >
+      Heads
+    </button>
+    <button
+      onclick="
+        choose('Tails');
+    "
+    >
+      Tails
+    </button>
+    <p class="display"></p>
+    <br />
+    <br />
+    <input
+      type="text"
+      placeholder="name"
+      class="bar"
+      onkeydown="
+        displayOnKeyDown(event);
+    "
+    />
+    <button class="submit" onclick="displayName();">submit</button>
+    <p class="display2" onclick=""></p>
+
+    <br />
+    <br />
+
+    <input
+      type="text"
+      class="bar2"
+      placeholder="Type here"
+      onkeyup="
+    updatetext();
+    "
+    />
+    <button class="submit2">submitt</button>
+    <p class="display3"></p>
+    <script>
+      let display = document.querySelector(".display");
+      console.log((document.querySelector(".button").innerHTML = "9b done"));
+
+      function choose(choice) {
+        display.innerHTML = `You chose ${choice}`;
+      }
+
+      function displayName() {
+        let submit = document.querySelector(".submit");
+        let bar = document.querySelector(".bar");
+        let display2 = document.querySelector(".display2");
+
+        display2.innerHTML = `Your name is ${bar.value}.`;
+      }
+
+      function displayOnKeyDown(event) {
+        if (event.key === "Enter") {
+          displayName();
+        }
+      }
+
+      function updatetext() {
+        let submit1 = document.querySelector(".submit2");
+        let bar2 = document.querySelector(".bar2");
+        let display3 = document.querySelector(".display3");
+
+        display3.innerHTML = bar2.value;
+      }
+    </script>
+  </body>
+</html>

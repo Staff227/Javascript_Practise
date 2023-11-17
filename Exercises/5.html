@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rock paper scissors</title>
+    <style>
+      * {
+        font-size: 1.2rem;
+      }
+
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      button > img {
+        width: 70%;
+      }
+
+      .game_button {
+        background-color: black;
+        border: none;
+        border: 2px solid white;
+        margin: 10px;
+        padding: 20px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .button_container {
+        display: flex;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      .choice img {
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <div class="button_container">
+      <button
+        class="game_button rock_button"
+        onclick="
+    pickComputerMove(rockButton);
+    playGame(rockButton);
+    "
+      >
+        <img src="../images/rock-emoji.png" alt="Rock" class="rock" />
+      </button>
+      <button
+        class="game_button paper_button"
+        onclick="
+    pickComputerMove(paperButton);
+    playGame(paperButton)
+    "
+      >
+        <img src="../images/paper-emoji.png" alt="Paper" class="paper" />
+      </button>
+      <button
+        class="game_button scissors_button"
+        onclick="
+    pickComputerMove(scissorsButton);
+    playGame(scissorsButton)
+    "
+      >
+        <img
+          src="../images/scissors-emoji.png"
+          alt="Scissors"
+          class="scissors"
+        />
+      </button>
+    </div>
+
+    <p class="winner"></p>
+    <p class="choice"></p>
+    <p class="scores"></p>
+
+    <button
+      onclick="
+    score = {
+        win: 0,
+        loss: 0,
+        tie: 0,
+      };
+
+      updateScores();
+    "
+    >
+      Reset Score
+    </button>
+
+    <script>
+      let score = JSON.parse(localStorage.getItem("message")) || {
+        win: 0,
+        loss: 0,
+        tie: 0,
+      };
+
+      let winner = document.querySelector(".winner");
+      let choice = document.querySelector(".choice");
+      let scores = document.querySelector(".scores");
+
+      let rockButton = document.querySelector(".rock_button");
+      let paperButton = document.querySelector(".paper_button");
+      let scissorsButton = document.querySelector(".scissors_button");
+
+      rockButton = rockButton.innerHTML;
+      paperButton = paperButton.innerHTML;
+      scissorsButton = scissorsButton.innerHTML;
+
+      function updateScores() {
+        scores.innerHTML = `Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`;
+      }
+
+      updateScores();
+
+      function pickComputerMove() {
+        let randomNumber = Math.random();
+        let computerMove = "";
+        if (randomNumber > 0 && randomNumber <= 1 / 3) {
+          computerMove = rockButton;
+        } else if (randomNumber > 1 / 3 && randomNumber <= 2 / 3) {
+          computerMove = paperButton;
+        } else if (randomNumber > 2 / 3 && randomNumber <= 1) {
+          computerMove = scissorsButton;
+        }
+        return computerMove;
+      }
+
+      function playGame(playerMove) {
+        const computerMove = pickComputerMove();
+
+        let result = "";
+        if (computerMove === rockButton && playerMove === rockButton) {
+          result = "Tie";
+          score.tie += 1;
+        } else if (computerMove === paperButton && playerMove === rockButton) {
+          result = "You loose";
+          score.loss += 1;
+        } else if (
+          computerMove === scissorsButton &&
+          playerMove === rockButton
+        ) {
+          score.win += 1;
+          result = "You Win";
+        }
+
+        if (computerMove === rockButton && playerMove === paperButton) {
+          result = "You Win";
+          score.win += 1;
+        } else if (computerMove === paperButton && playerMove === paperButton) {
+          result = "Tie";
+          score.tie += 1;
+        } else if (
+          computerMove === scissorsButton &&
+          playerMove === paperButton
+        ) {
+          result = "You loose";
+          score.loss += 1;
+        }
+
+        if (computerMove === rockButton && playerMove === scissorsButton) {
+          result = "You loose";
+          score.loss += 1;
+        } else if (
+          computerMove === paperButton &&
+          playerMove === scissorsButton
+        ) {
+          result = "You Win";
+          score.win += 1;
+        } else if (
+          computerMove === scissorsButton &&
+          playerMove === scissorsButton
+        ) {
+          result = "Tie";
+          score.tie += 1;
+        }
+
+        localStorage.setItem("message", JSON.stringify(score));
+        console.log(computerMove);
+        winner.innerHTML = `${result}`;
+        choice.innerHTML = `You picked ${playerMove} Computer picked ${computerMove}`;
+        scores.innerHTML = `Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`;
+
+        /* alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`); */
+      }
+    </script>
+  </body>
+</html>

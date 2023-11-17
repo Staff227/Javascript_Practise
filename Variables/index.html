@@ -1,20 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    
-    <title>Variables</title>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
 
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+    <button
+      class="quantity"
+      onclick="
+    console.log(`The current cart quantity is: ${cartQuantity}`);
+    "
+    >
+      Show Quantity
+    </button>
+    <button
+      class="add"
+      onclick="
+    console.log(`Cart quantity is: ${cartQuantity = cartQuantity + 1}`);
+    "
+    >
+      Add to Cart
+    </button>
+    <button
+      class="+2"
+      onclick="
+    console.log(`Cart quantity is: ${cartQuantity -= 1}`);
+    "
+    >
+      Remove from cart
+    </button>
+    <button
+      class="+2"
+      onclick="
+    console.log(`Cart quantity is: ${cartQuantity -= 2}`);
+    "
+    >
+      -2
+    </button>
+    <button
+      class="+2"
+      onclick="
+    console.log(`Cart quantity is: ${cartQuantity -= 3}`);
+    "
+    >
+      -3
+    </button>
+    <button
+      class="+2"
+      onclick="
+    console.log(`Cart quantity is: ${cartQuantity = cartQuantity + 2}`);
+    "
+    >
+      +2
+    </button>
+    <button
+      class="+3"
+      onclick="
+    console.log(`Cart quantity is: ${cartQuantity = cartQuantity + 3}`);
+    "
+    >
+      +3
+    </button>
+    <button
+      class="+3"
+      onclick="
+    console.log(`Cart quantity is: ${cartQuantity = cartQuantity + 4}`);
+    "
+    >
+      +4
+    </button>
+    <button
+      class="+3"
+      onclick="
+    console.log(`Cart quantity is: ${cartQuantity = cartQuantity + 5}`);
+    "
+    >
+      +5
+    </button>
+    <button
+      class="reset"
+      onclick="
+    console.log(`The cart quantity has been reset to: ${cartQuantity = cartQuantity * 0}`);
+    "
+    >
+      Reset Cart
+    </button>
 
-
-    <script src="script.js">
- 
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

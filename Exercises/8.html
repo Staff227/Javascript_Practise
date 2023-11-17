@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heads or Tails</title>
+  </head>
+  <body>
+    <button onclick="playGame('Heads')">Heads</button>
+    <button onclick="playGame('Tails')">Tails</button>
+    <button onclick="
+    score = {
+          wins: 0,
+          losses: 0,
+        };
+    ">Clear Score</button>
+    <script>
+        let score = JSON.parse(localStorage.getItem('score')) || {
+          wins: 0,
+          losses: 0,
+        };
+
+        
+
+        let guess = "";
+
+      function playGame(move) {
+        
+
+        let randomNumber = Math.random();
+        if (randomNumber <= 1 / 2) {
+          guess = "Heads";
+        } else{
+          guess = "Tails";
+        }
+
+        
+
+        if (guess === move) {
+          score.wins += 1;
+         
+          alert(`Yess!! You Win 
+Wins: ${score.wins}  Losses: ${score.losses}`);
+        } else if (guess !== move) {
+          score.losses += 1;
+          
+          alert(`Sorry You loose 
+Wins: ${score.wins}  Losses: ${score.losses}`);
+        }
+
+
+        localStorage.setItem("score", JSON.stringify(score));
+
+
+      }
+
+      
+    </script>
+  </body>
+</ht

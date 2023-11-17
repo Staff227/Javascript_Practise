@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      const product1 = {
+        name: "basketball",
+        price: 2099,
+      };
+      const product2 = {
+        name: "basketball",
+        price: 2099,
+      };
+      product1.delivery = "3 days";
+
+      console.log(product1);
+
+      function comparePrice(product1, product2) {
+        if (product1 < product2) {
+          console.log(product1);
+        } else {
+          console.log(product2);
+        }
+      }
+
+      comparePrice(product1.price, product2.price);
+
+      function isSameProduct() {
+        if (
+          product1.name === product2.name &&
+          product1.price === product2.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log(isSameProduct(product1, product2));
+
+      let hello = "'HelloWorld' ".repeat(3);
+      console.log(hello);
+    </script>
+  </body>
+</html>

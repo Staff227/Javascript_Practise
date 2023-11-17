@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dom_Manipulation</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <button title="This is a button" id="button">send</button>
-    <div class="red">Lorem ipsum dolor sit amet.</div>
-    <p class="red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem veritatis similique molestiae beatae eos cum id? Reiciendis eos incidunt ab.</p>
-    
-    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button class="subscribe_button">Subscribe</button>
+    <br />
+    <br />
+    <p>Rock Paper Scissors</p>
+    <a href="../Exercises/5.html" target="_blank">Click Here</a>
+    <br />
+    <br />
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = Free shipping</p>
 
-
+    <input type="text" class="bar" placeholder="Cost of Orders" />
+    <button
+      class="calculate"
+      onclick="
+      compareItems();
+      "
+    >
+      Calculate
+    </button>
+    <p class="display"></p>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

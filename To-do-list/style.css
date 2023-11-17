@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.5rem;
+    height: 100vh;
+    
+    background-image: radial-gradient( white,rgb(5, 132, 205), rgb(2, 162, 255));
+}
+
+.heading{
+    color: aliceblue;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.container{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.input img{
+    width: 60%;
+    padding: 5px;
+
+}
+
+.filter img{
+    width: 60%;
+    
+    padding: 5px;
+}
+
+.input button{
+    width: 70%;
+    border-radius: 0 20px 20px 0;
+    border-style: none;
+}
+
+.input button:hover{
+    transition:all 0.2s ease;
+    transition-delay: 0.2s;
+    background-color: rgb(5, 132, 205);
+    border: 1px solid white;
+
+}
+
+.filter button:hover{
+    transition:all 0.2s ease;
+    transition-delay: 0.2s;
+    background-color: rgb(5, 132, 205);
+    border: 1px solid white;
+
+}
+
+.filter button{
+    width: 70%;
+    border-radius: 0 20px 20px 0;
+    border-style: none;
+}
+.input{
+    display: flex;
+    border-style: none;
+    
+    border-radius: 20px 0 0 20px;
+    
+}
+
+
+.filter{
+    display: flex;
+    border-radius: 20px 0 0 20px;
+    border-style: none;
+}
+
+
+.input input{
+    display: flex;
+    border-radius: 20px 0 0 20px;
+    border-style: none;
+}
+
+
+
+.filter input{
+    display: flex;
+    border-radius: 20px 0 0 20px;
+    border-style: none;
+}
+
+
+.filter input::placeholder{
+    padding-left: 30px ;
+    font-size: 1rem;
+}
+
+.input input:focus{
+    transition:all 0.2s ease;
+    outline-style:solid;
+    outline-color: rgb(21, 127, 193);;
+    outline-width: 2px;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+.filter input:focus{
+    transition:all 0.2s ease;
+    outline-style:solid;
+    outline-color: rgb(21, 127, 193);;
+    outline-width: 2px;
+    padding-left: 10px;
+    margin-left: 20px;
+}

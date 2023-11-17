@@ -1,46 +1,91 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="results">5+5</div>
-    <div>
-        <table>
-            <tr>
-                <td><button class="td">1</button></td>
-                <td><button class="td">2</button></td>
-                <td><button class="td">3</button></td>
-                <td><button class="operator">+</button></td>
-            </tr>
-            <tr>
-                <td><button class="td">4</button></td>
-                <td><button class="td">5</button></td>
-                <td><button class="td">6</button></td>
-                <td><button class="operator2">-</button></td>
-            </tr>
-            <tr>
-                <td><button class="td">7</button></td>
-                <td><button class="td">8</button></td>
-                <td><button class="td">9</button></td>
-                <td><button class="operator2">/</button></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button class="td span2">0</button></td>
-                
+    <div class="main_containor">
+      <p class="display">0</p>
+      <div class="containor">
+        <div class="grid">
+          <div class="div1">
+            <button onclick="updateCalculation('1');">1</button>
+            <button onclick="updateCalculation('2');">2</button>
+            <button onclick="updateCalculation('3');">3</button>
+            <button class="orange" onclick="updateCalculation(' + ')">+</button>
+          </div>
+          <div class="div2">
+            <button onclick="updateCalculation('4');">4</button>
+            <button onclick="updateCalculation('5');">5</button>
+            <button onclick="updateCalculation('6');">6</button>
+            <button class="orange" onclick="updateCalculation(' - ')">-</button>
+          </div>
+          <div class="div3">
+            <button onclick="updateCalculation('7')">7</button>
 
-                <td><button class="operator2">*</button></td>
-                <td><button class="operator">=</button></td>
-            </tr>
-            
-        </table>
+            <button onclick="updateCalculation('8')">8</button>
+            <button onclick="updateCalculation('9')">9</button>
+
+            <button class="orange" onclick="updateCalculation(' * ')">*</button>
+          </div>
+          <div class="div4">
+            <button onclick="updateCalculation('0')" class="span">0</button>
+            <button onclick="updateCalculation(' . ')">.</button>
+            <button
+              class="equalSign"
+              onclick="
+      displayAnswer();"
+            >
+              =
+            </button>
+            <button class="orange" onclick="updateCalculation(' / ')">/</button>
+          </div>
+        </div>
+        <div class="operator">
+          <button onclick="remove()">C</button>
+        </div>
+      </div>
     </div>
 
-   
-    <script src="script.js"></script>
+    <script>
+      let calculation = "";
+      function updateCalculation(value) {
+        let equalSign = document.querySelector(".equalSign");
+        let display = document.querySelector(".display");
+
+        let result;
+        calculation = localStorage.getItem("update") || "";
+        calculation += value;
+        result = calculation;
+        display.textContent = calculation;
+
+        localStorage.setItem("update", calculation);
+        return calculation;
+      }
+
+      function remove() {
+        let display = document.querySelector(".display");
+        calculation = "";
+        localStorage.setItem("update", calculation);
+        display.textContent = calculation;
+      }
+
+      function displayAnswer() {
+        let display = document.querySelector(".display");
+        calculation = eval(calculation);
+        display.textContent = calculation;
+        localStorage.setItem("update", calculation);
+      }
+      function displayOnload() {
+        let display = document.querySelector(".display");
+        let calculation = localStorage.getItem("update") || "";
+        display.textContent = calculation;
+        localStorage.setItem("update", calculation);
+      }
+    </script>
   </body>
 </html>

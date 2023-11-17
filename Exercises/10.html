@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML CSS JS</title>
+    <style>
+      .cart {
+        margin-bottom: 20px;
+        background-color: yellow;
+        padding: 10px 40px 10px 40px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 20px;
+      }
+
+      .uber_request {
+        margin-bottom: 20px;
+        background-color: black;
+        color: white;
+        padding: 10px 20px 10px 20px;
+        font-size: 1.1rem;
+        border: none;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+
+      .uber_schedule {
+        margin-bottom: 20px;
+        background-color: rgb(172, 172, 172);
+        padding: 10px 20px 10px 20px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 10px;
+      }
+
+      .added {
+        margin-bottom: 20px;
+        background-color: green;
+        color: white;
+        padding: 10px 40px 10px 40px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 20px;
+      }
+
+      .container {
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="cart" onclick="addToCart();">Add to Cart</button>
+    <div class="container">
+      <button class="uber_request" onclick="requestDrive();">
+        Request now
+      </button>
+      <button class="uber_schedule" onclick="scheduleLater();">
+        Schedule for later
+      </button>
+    </div>
+    <button
+      class="js_button cart"
+      onclick="
+    console.log(jsButton.classList.contains('js_button'));
+    "
+    >
+      test
+    </button>
+
+    <script>
+      let cart = document.querySelector(".cart");
+      let jsButton = document.querySelector(".js_button");
+      let uberRequest = document.querySelector(".uber_request");
+      let uberSchedule = document.querySelector(".uber_schedule");
+
+      function addToCart() {
+        if (cart.textContent === "Add to Cart") {
+          cart.textContent = "Added to Cart";
+          cart.classList.add("added");
+        } else {
+          cart.textContent = "Add to Cart";
+          cart.classList.remove("added");
+        }
+      }
+      function requestDrive() {
+        if (uberRequest.textContent === "Request now") {
+          uberRequest.textContent = "Drive requested";
+          uberRequest.classList.add("added");
+        } else {
+          uberRequest.textContent = "Request now";
+          uberRequest.classList.remove("added");
+        }
+      }
+      function scheduleLater() {
+        if (uberSchedule.textContent === "Schedule for later") {
+          uberSchedule.textContent = "Scheduled for later";
+          uberSchedule.classList.add("added");
+        } else {
+          uberSchedule.textContent = "Schedule for later";
+          uberSchedule.classList.remove("added");
+        }
+      }
+    </script>
+  </body>
+</html>

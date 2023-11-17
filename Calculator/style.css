@@ -1,56 +1,99 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 body{
-    text-align: center;
-    
     background-color: black;
-}
-
-div{
-    background-color: black;
-    color: antiquewhite;
-    display: flex;
+    /* display: flex;
     justify-content: center;
+    border: 2px solid rgb(255, 0, 0); */
+    
+   
 }
-
-table{
+.display{
     background-color: black;
-    text-align: center; 
+    color: white;
+    font-size: 45px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.td{
-    border-radius: 50%;
-    padding: 1rem 2.3rem 1rem 2.3rem;
-    margin: 0;
-    background-color: rgb(150, 143, 143);
-    font-size: 4rem;
+.main_containor{
+    width: 40%;
+    margin-left: 10px;
+    
 }
-.none{
+button{
+    background-color: rgb(51, 51, 51);;
+    color: white;
+    font-size: 26px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
     border: none;
 }
+
+.display{
+    
+}
+
+.containor{
+    display: grid;
+    
+    
+    
+
+    
+}
+.grid{
+    
+}
+.equalSign{
+    
+}
+
+.div1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.div2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 15px;
+     
+}
+
+.div3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.div4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 15px;
+     
+}
+.span{
+    
+}
+
 .operator{
-    border-radius: 50%;
-    background-color: orangered;
-    padding: 10px 35px 10px 35px;
-    font-size: 4rem;
-}
-.operator2{
-    border-radius: 50%;
-    background-color: orangered;
-    padding: 1rem 2.7rem 1rem 2.7rem;
-    font-size: 4rem;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+    
 }
 
-.span2{
-    background-color: rgb(44, 71, 71);
-    border-radius: 40%;
-    padding: 5% 40% 10px 40%;
-    font-size: 4rem;
-}
-.results{
-    background-color: rgb(72, 71, 71);
-    font-size: 4rem;
-}
-
-td{
-   
+.orange{
+    background-color: rgb(254, 160, 10);
 }
