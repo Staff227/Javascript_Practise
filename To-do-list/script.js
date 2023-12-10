@@ -1,31 +1,49 @@
-let myArray = ["Razak", "Mustapha", "Rashid"];
+let Array = [];
+let todo = 0;
+let display = document.querySelector('.todo-display');
+let close = document.querySelector('.close');
 
-render();
 
-function render() {
-    let array = "";
-    let myArrayIndex;
 
-    for (let i = 0; i < myArray.length; i++) {
-        myArrayIndex = myArray[i];
 
-        let html = `<p>${myArrayIndex}</p>`;
 
-        array += html;
+function renderTodo() {
+
+    let todoHtml = '';
+
+    for (let i = 0; i < Array.length; i++) {
+        let index = Array[i];
+        let html = `<div class="html_wrapper">
+        <button class="close" onclick="
+        
+        ">X</button>
+        <p>${index}</p>
+        </div>`;
+        todoHtml += html;
     }
-    document.querySelector(".display").innerHTML = array;
+    display.innerHTML = todoHtml;
+
 }
 
-function addToList() {
-    let input = document.querySelector(".input");
+function clear() {
+    for (let i = 0; i < Array.length; i++) {
+        let index = Array[i];
 
-    myArray.push(input.value);
 
-    console.log(myArray);
-
-    input.value = "";
-
-    render();
+    }
 }
 
-console.log(myArray);
+
+
+
+
+function addToDo() {
+    let input = document.querySelector('.input');
+    let inputText = input.value;
+
+    Array.push(inputText);
+    input.value = '';
+    renderTodo();
+
+
+}
