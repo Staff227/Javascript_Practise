@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color: rgb(8, 16, 24);
+}
+.w{
+    font-size: 3rem;
+}
+.red{
+    color: red;
+    font-style: italic;
+    font-family: cursive;
+}
+
+.header{
+    color: aliceblue;
+    text-align: center;
+    margin: 0%;
+    padding: 0%;
+}
+
+.containor{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80vh;
+    color: aliceblue;
+    font-size: 10rem;
+   
+}
+
+.buttonContainor{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 50px;
+}
+button{
+    font-size: 1.3rem;
+    padding: 10px 20px 10px 20px;
+    font-weight: 600;
+}
+
+.start{
+    padding: 10px 25px 10px 25px;
+}
+
+.seconds{
+    color: red;
+}

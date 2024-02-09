@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    <script>
+      function countPositive(nums) {
+        let positiveNumbers = 0;
+        nums.forEach((num) => {
+          if (num > 0) {
+            positiveNumbers++;
+          }
+        });
+
+        return positiveNumbers;
+      }
+
+      console.log(countPositive([1, -3, 5]));
+      console.log(countPositive([-2, 3, -5, 7, 10]));
+
+      function addNum(array, num) {
+        return array.map((value) => value * num);
+      }
+
+      console.log(addNum([1, 2, 3, 4, 10], 2));
+
+      function removeEgg(foods) {
+        let eggsRemoved = 0;
+        return foods.filter((value) => {
+          if (value === "egg" && eggsRemoved < 2) {
+            eggsRemoved++;
+            return false;
+          }
+          return true;
+        });
+      }
+
+      console.log(removeEgg(["egg", "egg", "egg", "apple", "ham", "egg"]));
+    </script>
+  </body>
+</html>

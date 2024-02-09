@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise on Arays and loops</title>
+  </head>
+  <body>
+    <script>
+      /* let theArray = ["Jack", "Search", "Jimmy", "Search"];
+
+      for (let i = 0; i < theArray.length; i++) {
+        let index = theArray[i];
+        if (index === "Search") {
+          console.log(i);
+          break;
+        } else {
+          console.log(-1);
+        }
+      } */
+
+      /* function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          let index = array[i];
+          if (word === index) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+      console.log(findIndex(["green", "red", "blue", "red"], "red"));
+      console.log(findIndex(["green", "red", "blue", "red"], "yellow")); */
+
+      function removeEgg(foods) {
+        const foodsCopy = foods.slice();
+        const reversedFoods = foodsCopy.reverse();
+
+        let result = [];
+        let eggsRemoved = 0;
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] === "egg" && eggsRemoved < 2) {
+            eggsRemoved++;
+            continue;
+          }
+          result.push(foods[i]);
+          result.slice();
+          result.reverse();
+        }
+        return result;
+      }
+
+      console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
+    </script>
+  </body>
+</html>

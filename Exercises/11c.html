@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More Exercises</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 0; i <= 20; i++) {
+        console.log(i);
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+          console.log("Fizz");
+        } else if (i % 5 === 0) {
+          console.log("Buzz");
+        }
+      }
+
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            return i;
+          }
+        }
+
+        return -1;
+      }
+
+      function unique(array) {
+        let arcArray = [];
+        let arcVar = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === arcArray[i] && arcVar < 1) {
+            arcVar++;
+            continue;
+          }
+          arcArray.push(array[i]);
+          console.log(arcArray);
+        }
+        return arcArray;
+      }
+
+      console.log(unique(["green", "red", "blue", "red"]));
+    </script>
+  </body>
+</html>

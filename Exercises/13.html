@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Functions</title>
+    <style>
+      button {
+        font-size: 1.2rem;
+        padding: 5px 15px 5px 15px;
+      }
+      .finished {
+        font-size: 1.2rem;
+        padding: 5px 15px 5px 15px;
+        margin-bottom: 10px;
+      }
+
+      div {
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+      }
+      .render {
+        font-size: 1.2rem;
+        padding: 5px 15px 5px 15px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="finished">Click</button>
+    <button class="loading">Click</button>
+    <div>
+      <button class="added">Add to cart</button><span class="render"></span>
+    </div>
+    <button class="setTitle">Add</button>
+    <button class="removeTitle">Remove</button>
+
+    <script>
+      let add = () => {
+        console.log(2 + 3);
+      };
+      add();
+      add();
+
+      function runTwice(param) {
+        console.log(param);
+      }
+
+      runTwice(() => {
+        "How are you doing";
+      });
+
+      runTwice(() => {
+        'How are you doing "2"';
+      });
+
+      let finishButton = document.querySelector(".finished");
+      finishButton.addEventListener("click", () => {
+        if (finishButton.innerHTML === "Click") {
+          setTimeout(() => {
+            finishButton.innerHTML = "Finished";
+          }, 1000);
+        } else if (finishButton.innerHTML === "Finished") {
+          finishButton.innerHTML = "Click";
+        }
+      });
+
+      let loadingButton = document.querySelector(".loading");
+      loadingButton.addEventListener("click", () => {
+        loadingButton.innerHTML = "loading...";
+        setTimeout(() => {
+          loadingButton.innerHTML = "Click";
+        }, 2000);
+      });
+
+      let addedButton = document.querySelector(".added");
+      let render = document.querySelector(".render");
+      console.log(render.innerHTML);
+
+      addedButton.addEventListener("click", () => {
+        render.innerHTML = "Added";
+        setTimeout(() => {
+          render.innerHTML = "";
+        }, 1000);
+      });
+
+      let addTitle = document.querySelector(".setTitle");
+      let removeTitle = document.querySelector(".removeTitle");
+      let messageCount = 2;
+
+      function incre() {
+        messageCount++;
+      }
+
+      let interval;
+
+      addTitle.addEventListener("click", () => {
+        clearInterval(interval);
+        incre();
+        interval = setInterval(() => {
+          if (document.title === "Advanced Functions") {
+            document.title = `(${messageCount}) New messages`;
+          } else {
+            document.title = "Advanced Functions";
+          }
+        }, 1000);
+      });
+
+      removeTitle.addEventListener("click", () => {
+        messageCount--;
+      });
+    </script>
+  </body>
+</html>
